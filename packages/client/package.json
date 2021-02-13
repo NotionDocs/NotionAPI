@@ -1,0 +1,46 @@
+{
+  "name": "@notionapi/client",
+  "version": "0.0.0",
+  "repository": "https://github.com/NotionAPI/NotionAPI",
+  "sideEffects": false,
+  "description": "Client package for NotionAPI",
+  "jsnext:main": "dist/index.es.js",
+  "source": "src/index.ts",
+  "module": "dist/index.es.js",
+  "esmodules": "dist/index.modern.js",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "microbundle",
+    "test": "jest"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "notion",
+    "api",
+    "cms",
+    "graphql",
+    "notionapi"
+  ],
+  "author": "Cole Gawin",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "@types/got": "^9.6.11",
+    "got": "^11.8.1",
+    "microbundle": "^0.13.0",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "notion-types": "^4.0.0"
+  },
+  "gitHead": "1a2bd01ac07b2ba5cd7bc261e4c99d798a8eacc1"
+}

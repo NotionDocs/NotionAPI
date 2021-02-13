@@ -1,0 +1,22 @@
+{
+  "name": "notionapi",
+  "private": "true",
+  "scripts": {
+    "build": "lerna run build",
+    "prepare": "yarn build",
+    "bootstrap": "lerna bootstrap",
+    "test": "lerna run test",
+    "clean": "rm -rf packages/**/dist",
+    "client": "yarn workspace @notionapi/client",
+    "core": "yarn workspace @notionapi/core"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "jest": "^26.6.3",
+    "lerna": "^3.22.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.5.0"
+  }
+}
