@@ -10,6 +10,8 @@ export function transformBlockMap<T>(
 ): T {
   const block = blockMap[blockId];
 
+  if (!block) return;
+
   let type: keyof TransformRules<T> = block.value.type as any;
   let content: any;
   let children: T[];
