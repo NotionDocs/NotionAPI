@@ -8,11 +8,7 @@ export interface NotionCollectionPagesReq {
 }
 
 export class NotionCollection {
-  public collectionId: string;
-
-  constructor(public readonly data: CollectionInstance, pageId: string) {
-    this.collectionId = pageId;
-  }
+  constructor(public readonly data: CollectionInstance, public collectionId: string) {}
 
   public static readonly getPages = (data: CollectionInstance) => (
     req: NotionCollectionPagesReq = {}
@@ -33,6 +29,6 @@ export class NotionCollection {
     });
   };
 
-  public readonly getMetadata = () => NotionPage.getMetadata(this.data.recordMap);
+  public readonly getMetadata = () => NotionPage.getMetadata(this.data.recordMap)(this.collectionId);
   public readonly getPages = (req: NotionCollectionPagesReq) => NotionCollection.getPages(this.data)(req);
 }

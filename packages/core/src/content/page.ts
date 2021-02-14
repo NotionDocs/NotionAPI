@@ -4,7 +4,7 @@ import { parseNotionText } from "./text";
 import { PageMetadata } from "./util";
 
 export class NotionPage {
-  constructor(public readonly recordMap: RecordMap, public readonly pageId: string) {}
+  constructor(public readonly recordMap: RecordMap, public pageId: string) {}
 
   public static readonly getMetadata = (recordMap: RecordMap) => (pageId: string): PageMetadata => {
     const schema = Object.values(recordMap.collection)[0].value.schema;
