@@ -40,6 +40,7 @@ export class NotionPage {
       const prop = schema[cur[0]];
       switch (prop.type) {
         case "title":
+        case "select":
           props[prop.name] = cur[1][0][0];
           break;
         case "text":
@@ -49,13 +50,11 @@ export class NotionPage {
           // unimplemented
           props[prop.name] = cur[1];
           break;
-        case "select":
-          props[prop.name] = cur[1][0][0];
-          break;
         case "multi_select":
           props[prop.name] = cur[1][0][0].split(",");
           break;
         case "date":
+        case "relation":
           props[prop.name] = cur[1][0][1][0][1];
           break;
         case "person":
@@ -81,10 +80,6 @@ export class NotionPage {
           props[prop.name] = cur[1];
           break;
         case "formula":
-          // unimplemented
-          props[prop.name] = cur[1];
-          break;
-        case "relation":
           // unimplemented
           props[prop.name] = cur[1];
           break;
