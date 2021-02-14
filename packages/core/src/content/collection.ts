@@ -25,6 +25,7 @@ export class NotionCollection {
       return {
         id,
         properties: NotionPage.getProperties(data.recordMap)(id),
+        metadata: NotionPage.getMetadata(data.recordMap)(id),
       };
     });
   };
