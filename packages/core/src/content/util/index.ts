@@ -1,3 +1,3 @@
 export * from "./CollectionPage";
-export * from "./dashifyId";
+export * from "@notionapi/client/dist/dashifyId";
 export * from "./PageMetadata";
