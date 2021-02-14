@@ -11,8 +11,6 @@ export class NotionPage {
 
     const pageBlock = recordMap.block[pageId].value as PageBlock;
 
-    console.log(pageBlock);
-
     const title = pageBlock.properties?.title[0][0];
     const createdTime = pageBlock.created_time;
     const lastEditedTime = pageBlock.last_edited_time;
