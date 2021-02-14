@@ -1,6 +1,6 @@
 import { CollectionInstance } from "notion-types";
 import { NotionPage } from "./page";
-import { CollectionPage, dashifyId } from "./util";
+import { CollectionPage } from "./util";
 
 export interface NotionCollectionPagesReq {
   cursor?: string;
@@ -11,7 +11,7 @@ export class NotionCollection {
   public collectionId: string;
 
   constructor(public readonly data: CollectionInstance, pageId: string) {
-    this.collectionId = dashifyId(pageId);
+    this.collectionId = pageId;
   }
 
   public static readonly getPages = (data: CollectionInstance) => (
