@@ -2,7 +2,6 @@ import notionClient from "./main";
 
 async function qp_doesntCrash() {
   const res = await notionClient.queryPage({ pageId: "2fea615a97a7401c81be486e4eec2e94" });
-  console.log(res.recordMap.block["6d886ca8-7ab9-4c21-a16e-3b82b43a57fb"]);
 }
 
 test("queryPage - Doesn't crash", qp_doesntCrash);
