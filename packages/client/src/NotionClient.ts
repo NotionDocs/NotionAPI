@@ -25,13 +25,13 @@ export class NotionClient {
   public async queryCollection(req: {
     collectionId: string;
     collectionViewId: string;
-    query: BaseCollectionView["query2"];
+    query?: BaseCollectionView["query2"];
   }) {
     return (
-      await this.httpService("https://www.notion.so/api/v3/queryCollection", {
+      await this.httpService(NOTION_API_URL + "queryCollection", {
         token_v2: this.token,
         data: {
-          collectionId: dashifyId(req.collectionViewId),
+          collectionId: dashifyId(req.collectionId),
           collectionViewId: dashifyId(req.collectionViewId),
           loader: {
             type: "table",
