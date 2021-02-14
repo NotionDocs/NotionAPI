@@ -1,6 +1,6 @@
 {
   "name": "@notionapi/client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "https://github.com/NotionAPI/NotionAPI",
   "sideEffects": false,
   "description": "Client package for NotionAPI",
