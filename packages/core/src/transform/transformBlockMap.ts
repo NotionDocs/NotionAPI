@@ -129,6 +129,12 @@ export function transformBlockMap<T>(
         color: bookmarkColor,
       };
       break;
+    case "collection_view":
+      content = {
+        collectionId: block.value.collection_id,
+        viewIds: block.value.view_ids,
+      };
+      break;
   }
 
   return transformRules[type]?.(blockId, content, children?.filter(Boolean));

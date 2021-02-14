@@ -3,6 +3,7 @@ import {
   BookmarkBlockContent,
   CalloutBlockContent,
   CodeBlockContent,
+  CollectionViewBlockContent,
   ColumnBlockContent,
   EquationBlockContent,
   HeaderBlockContent,
@@ -34,4 +35,5 @@ export type TransformRules<T> = Partial<{
   callout: (id: string, content: CalloutBlockContent) => T;
   bookmark: (id: string, content: BookmarkBlockContent) => T;
   toggle: (id: string, content: TextBlockContent) => T;
+  collection_view: (id: string, content: CollectionViewBlockContent) => T;
 }>;

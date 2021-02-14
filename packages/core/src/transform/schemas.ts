@@ -78,3 +78,8 @@ export type BookmarkBlockContent = {
   thumbnail?: string;
   color?: Color;
 };
+
+export type CollectionViewBlockContent = {
+  collectionId: string;
+  viewIds: string[];
+};
