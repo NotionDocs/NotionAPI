@@ -38,6 +38,7 @@ export class NotionPage {
 
     return Object.entries(properties).reduce((props, cur) => {
       const prop = schema[cur[0]];
+      if (!prop) return props; // occasionally, old props are left in properties object but not schema
       switch (prop.type) {
         case "title":
         case "select":
