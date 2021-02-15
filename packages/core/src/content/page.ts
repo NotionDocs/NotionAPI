@@ -18,8 +18,12 @@ export class NotionPage {
     const _format = pageBlock.format;
     let format = {
       font: _format?.["page_font"],
-      cover: isURL(_format?.["page_cover"] || "") ? mapImageURL(_format?.["page_cover"], pageBlock) : undefined,
-      pageIcon: isURL(_format?.["page_icon"] || "") ? mapImageURL(_format?.["page_icon"], pageBlock) : undefined,
+      cover: isURL(_format?.["page_cover"] || "")
+        ? mapImageURL(_format?.["page_cover"], pageBlock)
+        : _format?.["page_cover"],
+      pageIcon: isURL(_format?.["page_icon"] || "")
+        ? mapImageURL(_format?.["page_icon"], pageBlock)
+        : _format?.["page_icon"],
     };
 
     return {
