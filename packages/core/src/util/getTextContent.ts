@@ -1,5 +1,5 @@
 import { Decoration } from "notion-types";
-import { defaultNotionText, parseNotionText } from "../../content/text";
+import { defaultNotionText, parseNotionText } from "../content/text";
 
 export const getTextContent = (text?: Decoration[]) => {
   if (!text) return undefined;

@@ -1,6 +1,6 @@
 import { CollectionInstance } from "notion-types";
 import { NotionPage } from "./page";
-import { CollectionPage } from "./util";
+import { CollectionPage } from "../util";
 
 export interface NotionCollectionPagesReq {
   cursor?: string;

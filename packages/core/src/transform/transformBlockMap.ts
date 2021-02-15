@@ -1,5 +1,5 @@
 import { BlockMap } from "notion-types";
-import { findListStart, getTextContent, getTopLevelPageBlock } from "./util";
+import { findListStart, getTextContent, getTopLevelPageBlock, mapImageURL } from "../util";
 import { TransformRules } from "./TransformRules";
 
 export function transformBlockMap<T>(
@@ -104,7 +104,7 @@ export function transformBlockMap<T>(
         fullWidth: block.value.format?.block_full_width,
         pageWidth: block.value.format?.block_page_width,
         preserveScale: block.value.format?.block_preserve_scale,
-        src: block.value.format?.display_source ?? block.value.properties?.source?.[0]?.[0],
+        src: mapImageURL(block.value.format?.display_source ?? block.value.properties?.source?.[0]?.[0], block.value),
         caption: getTextContent(block.value.properties?.caption),
       };
       break;
