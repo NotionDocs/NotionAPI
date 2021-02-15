@@ -1,7 +1,7 @@
 import { PageBlock } from "notion-types";
 import { RecordMap } from "notion-types/src/maps";
 import { parseNotionText } from "./text";
-import { mapImageURL, PageMetadata } from "../util";
+import { isURL, mapImageURL, PageMetadata } from "../util";
 
 export class NotionPage {
   constructor(public readonly recordMap: RecordMap, public pageId: string) {}
@@ -18,8 +18,8 @@ export class NotionPage {
     const _format = pageBlock.format;
     let format = {
       font: _format?.["page_font"],
-      cover: _format?.["page_cover"] ? mapImageURL(_format?.["page_cover"], pageBlock) : undefined,
-      pageIcon: _format?.["page_icon"] ? mapImageURL(_format?.["page_icon"], pageBlock) : undefined,
+      cover: isURL(_format?.["page_cover"] || "") ? mapImageURL(_format?.["page_cover"], pageBlock) : undefined,
+      pageIcon: isURL(_format?.["page_icon"] || "") ? mapImageURL(_format?.["page_icon"], pageBlock) : undefined,
     };
 
     return {
