@@ -19,7 +19,7 @@ export class NotionPage {
     let format = {
       font: _format?.["page_font"],
       cover: _format?.["page_cover"],
-      icon: _format?.["page_icon"],
+      pageIcon: _format?.["page_icon"],
     };
 
     return {
