@@ -59,8 +59,10 @@ export class NotionPage {
           props[prop.name] = cur[1][0][0].split(",");
           break;
         case "date":
-        case "relation":
           props[prop.name] = cur[1][0][1][0][1];
+          break;
+        case "relation":
+          props[prop.name] = cur[1].filter((a) => a.length > 1).map((a) => a[1][0][1]);
           break;
         case "person":
           // unimplemented
