@@ -34,8 +34,9 @@ export function transformBlockMap<T>(
     case "bulleted_list":
     case "numbered_list":
       const listText = getTextContent(block.value.properties?.title);
-      const start = findListStart(blockId, blockMap);
-      content = { text: listText, start };
+      const listStart = findListStart(blockId, blockMap);
+      const listColor = block.value.format?.block_color;
+      content = { text: listText, start: listStart, color: listColor };
       children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformRules, false));
       break;
     case "header":
@@ -111,7 +112,8 @@ export function transformBlockMap<T>(
     case "callout":
       const calloutText = getTextContent(block.value.properties?.title);
       const calloutIcon = block.value.format?.page_icon;
-      content = { text: calloutText, icon: calloutIcon };
+      const calloutColor = block.value.format?.block_color;
+      content = { text: calloutText, icon: calloutIcon, color: calloutColor };
       break;
     case "bookmark":
       const bookmarkLink = block.value.properties.link[0][0];

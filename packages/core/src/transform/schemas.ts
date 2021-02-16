@@ -25,6 +25,7 @@ export type PageLinkBlockContent = {
 
 export type ListBlockContent = BaseTextBlockContent & {
   start: number;
+  color?: Color;
 };
 
 export type HeaderBlockContent = BaseTextBlockContent & {
@@ -68,6 +69,7 @@ export type AssetBlockContent = {
 
 export type CalloutBlockContent = BaseTextBlockContent & {
   icon?: string;
+  color?: Color;
 };
 
 export type BookmarkBlockContent = {
