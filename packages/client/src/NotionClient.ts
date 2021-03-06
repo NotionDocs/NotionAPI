@@ -13,9 +13,9 @@ export class NotionClient {
         token_v2: this.token,
         data: {
           pageId: dashifyId(req.pageId),
-          limit: Number.MAX_SAFE_INTEGER,
           cursor: { stack: [] },
           chunkNumber: 0,
+          limit: 100,
           verticalColumns: false,
         },
       })
