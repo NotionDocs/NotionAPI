@@ -11,7 +11,7 @@ export interface NotionCollectionPagesReq {
 export class NotionCollectionService {
   constructor(private client: NotionClient, private pageService: NotionPageService) {}
 
-  extractPages = (collection: CollectionInstance): CollectionPage[] =>
+  extractPagesFrom = (collection: CollectionInstance): CollectionPage[] =>
     (collection.result.blockIds || []).map((id) => {
       return {
         id,
