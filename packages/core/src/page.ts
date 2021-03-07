@@ -139,4 +139,13 @@ export class NotionPageService {
 
     return content as BlockMap;
   }
+
+  fetch = async (pageId: string) =>
+    (await this.client.query("loadPageChunk", {
+      pageId,
+      limit: 30,
+      cursor: { stack: [] },
+      chunkNumber: 0,
+      verticalColumns: false,
+    })) as PageChunk;
 }
