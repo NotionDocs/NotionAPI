@@ -36,5 +36,9 @@
   "dependencies": {
     "@notionapi/client": "^0.0.5",
     "notion-types": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.8",
+    "node-fetch": "^2.6.1"
   }
 }
