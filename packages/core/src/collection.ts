@@ -24,7 +24,7 @@ export class NotionCollectionService {
   extractMetadataFrom = (collection: CollectionInstance) =>
     this.pageService.extractMetadataFrom(collection.recordMap, Object.keys(collection.recordMap.block)[0]);
 
-  async fetch(pageId: string, collectionViewId: string, limit: number = 50) {
+  async fetchFrom(pageId: string, collectionViewId: string, limit: number = 50) {
     const page = (await this.client.query("loadPageChunk", {
       pageId: dashifyId(pageId),
       cursor: { stack: [] },
@@ -50,6 +50,20 @@ export class NotionCollectionService {
         userTimeZone: "America/Chicago",
       },
       query,
+    })) as CollectionInstance;
+  }
+
+  async fetch(collectionId: string, collectionViewId: string, limit: number = 30) {
+    return (await this.client.query("queryCollection", {
+      collectionId,
+      collectionViewId,
+      loader: {
+        limit,
+        loadContentCover: true,
+        searchQuery: "",
+        type: "table",
+        userTimeZone: "America/Chicago",
+      },
     })) as CollectionInstance;
   }
 }
