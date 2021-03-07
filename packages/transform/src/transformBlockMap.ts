@@ -49,7 +49,7 @@ export function transformBlockMap<T>(
       break;
     case "to_do":
       const todoText = getTextContent(block.value.properties?.title);
-      const checked = block.value.properties.checked[0][0] === "Yes";
+      const checked = block.value.properties.checked?.[0]?.[0] === "Yes";
       content = { text: todoText, checked };
       children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformRules, false));
       break;
