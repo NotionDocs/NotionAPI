@@ -132,9 +132,10 @@ export class NotionPageService {
         })) as PageChunk).recordMap
       );
 
-      content = { ...content, ...newContent };
+      // if last key in new content is in content, then the search is over
+      if (Object.keys(content).includes(Object.keys(newContent).pop())) break;
 
-      if (Object.keys(newContent).length <= index + loaderLimit) break;
+      content = { ...content, ...newContent };
       index += loaderLimit;
     }
 
