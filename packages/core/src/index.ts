@@ -10,4 +10,5 @@ const createNotionService = (client: NotionClient) => {
 
 export * from "./collection";
 export * from "./page";
+export * from "./util";
 export default createNotionService;
