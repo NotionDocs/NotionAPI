@@ -1,7 +1,8 @@
 import { CollectionInstance, PageChunk } from "notion-types";
 import { CollectionPage } from "./util";
-import { NotionClient } from "@notionapi/client";
 import { NotionPageService } from "./page";
+import { dashifyId } from "./util/dashifyId";
+import { NotionClient } from "@notionapi/client";
 
 export interface NotionCollectionPagesReq {
   cursor?: string;
@@ -25,7 +26,7 @@ export class NotionCollectionService {
 
   async fetch(pageId: string, collectionViewId: string, limit: number = 50) {
     const page = (await this.client.query("loadPageChunk", {
-      pageId,
+      pageId: dashifyId(pageId),
       cursor: { stack: [] },
       chunkNumber: 0,
       limit: 100,
@@ -33,6 +34,9 @@ export class NotionCollectionService {
     })) as PageChunk;
 
     const collectionId = Object.keys(page.recordMap.collection)[0];
+
+    collectionViewId = dashifyId(collectionViewId);
+
     const query = page.recordMap.collection_view[collectionViewId].value.query2;
 
     return (await this.client.query("queryCollection", {

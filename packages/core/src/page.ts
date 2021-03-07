@@ -1,6 +1,7 @@
 import { BlockMap, PageBlock, PageChunk } from "notion-types";
 import { RecordMap } from "notion-types/src/maps";
 import { isURL, mapImageURL, PageMetadata } from "./util";
+import { dashifyId } from "./util/dashifyId";
 import { NotionClient } from "@notionapi/client";
 
 export class NotionPageService {
@@ -142,7 +143,7 @@ export class NotionPageService {
 
   fetch = async (pageId: string) =>
     (await this.client.query("loadPageChunk", {
-      pageId,
+      pageId: dashifyId(pageId),
       limit: 30,
       cursor: { stack: [] },
       chunkNumber: 0,
