@@ -1,0 +1,17 @@
+.npmrc
+**/.npmrc
+
+/node_modules/
+/.cache/
+/.yarn/
+
+**/dist/
+**/node_modules/
+
+/packages/core/collection-res.json
+/packages/core/page-res.json
+/collection-res.json
+/page-res.json
+/treeify.json
+
+*.log

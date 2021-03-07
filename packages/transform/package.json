@@ -1,0 +1,39 @@
+{
+  "name": "@notionapi/transform",
+  "version": "0.0.0",
+  "repository": "https://github.com/NotionAPI/NotionAPI",
+  "sideEffects": false,
+  "description": "Transformation package for NotionAPI",
+  "jsnext:main": "dist/index.es.js",
+  "source": "src/index.ts",
+  "module": "dist/index.es.js",
+  "esmodules": "dist/index.modern.js",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "microbundle",
+    "test": "jest"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "notion",
+    "api",
+    "cms",
+    "graphql",
+    "notionapi"
+  ],
+  "author": "Cole Gawin",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "notion-types": "^4.0.0"
+  }
+}
