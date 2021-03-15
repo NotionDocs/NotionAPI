@@ -18,8 +18,11 @@ export function transformBlockMap<T>(
 
   switch (block.value.type) {
     case "text":
+      content = getTextContent(block.value.properties?.title);
+      break;
     case "toggle":
       content = getTextContent(block.value.properties?.title);
+      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformRules, false));
       break;
     case "page":
       if (isTopLevel) {
