@@ -1,5 +1,5 @@
 {
-  "name": "@notionapi/transform",
+  "name": "@notiondocs/api-transform",
   "version": "0.0.10",
   "repository": "https://github.com/NotionAPI/NotionAPI",
   "sideEffects": false,

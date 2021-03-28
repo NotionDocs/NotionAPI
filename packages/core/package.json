@@ -1,5 +1,5 @@
 {
-  "name": "@notionapi/core",
+  "name": "@notiondocs/api-core",
   "version": "0.0.10",
   "repository": "https://github.com/NotionAPI/NotionAPI",
   "sideEffects": false,
@@ -34,7 +34,7 @@
   "author": "Cole Gawin",
   "license": "MPL-2.0",
   "dependencies": {
-    "@notionapi/client": "^0.0.10",
+    "@notiondocs/api-client": "^0.0.10",
     "notion-types": "^4.0.0"
   },
   "devDependencies": {
