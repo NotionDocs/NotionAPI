@@ -2,7 +2,7 @@ export type HTTPService = (
   url: string,
   request: {
     data: any;
-    token_v2: string;
+    headers: Record<string, any>;
   }
 ) => Promise<{
   responseData: Record<string, any>;

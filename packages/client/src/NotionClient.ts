@@ -8,7 +8,10 @@ export class NotionClient {
   public async query(page: string, data: any) {
     return (
       await this.httpService(NOTION_API_URL + page, {
-        token_v2: this.token,
+        headers: {
+          "content-type": "application/json",
+          cookie: `token_v2=${this.token}`,
+        },
         data,
       })
     ).responseData;
