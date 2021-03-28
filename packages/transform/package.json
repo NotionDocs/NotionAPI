@@ -1,7 +1,7 @@
 {
   "name": "@notiondocs/api-transform",
   "version": "0.0.11",
-  "repository": "https://github.com/NotionAPI/NotionAPI",
+  "repository": "https://github.com/NotionDocs/NotionAPI",
   "sideEffects": false,
   "description": "Transformation package for NotionAPI",
   "jsnext:main": "dist/index.es.js",
@@ -35,5 +35,6 @@
   "license": "MPL-2.0",
   "dependencies": {
     "notion-types": "^4.0.0"
-  }
+  },
+  "gitHead": "30a56f9dd48fa346cf49f82b360e932b7171dfb4"
 }

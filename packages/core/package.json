@@ -1,7 +1,7 @@
 {
   "name": "@notiondocs/api-core",
   "version": "0.0.11",
-  "repository": "https://github.com/NotionAPI/NotionAPI",
+  "repository": "https://github.com/NotionDocs/NotionAPI",
   "sideEffects": false,
   "description": "The unofficial Javascript API for Notion. Written in Typescript, GraphQL friendly.",
   "jsnext:main": "dist/index.es.js",
@@ -40,5 +40,6 @@
   "devDependencies": {
     "@types/node-fetch": "^2.5.8",
     "node-fetch": "^2.6.1"
-  }
+  },
+  "gitHead": "30a56f9dd48fa346cf49f82b360e932b7171dfb4"
 }
