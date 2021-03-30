@@ -2,7 +2,7 @@ import { BlockMap, PageBlock, PageChunk } from "notion-types";
 import { RecordMap } from "notion-types/src/maps";
 import { isURL, mapImageURL, PageMetadata } from "./util";
 import { dashifyId } from "./util/dashifyId";
-import { NotionClient } from "@notionapi/client";
+import { NotionClient } from "@notiondocs/api-client";
 
 export class NotionPageService {
   constructor(private client: NotionClient) {}

@@ -2,7 +2,7 @@ import { CollectionInstance, PageChunk } from "notion-types";
 import { CollectionPage } from "./util";
 import { NotionPageService } from "./page";
 import { dashifyId } from "./util/dashifyId";
-import { NotionClient } from "@notionapi/client";
+import { NotionClient } from "@notiondocs/api-client";
 
 export interface NotionCollectionPagesReq {
   cursor?: string;

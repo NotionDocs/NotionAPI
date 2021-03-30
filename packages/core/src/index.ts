@@ -1,4 +1,4 @@
-import { NotionClient } from "@notionapi/client";
+import { NotionClient } from "@notiondocs/api-client";
 import { NotionCollectionService } from "./collection";
 import { NotionPageService } from "./page";
 
