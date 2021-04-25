@@ -1,11 +1,11 @@
 name: Build
-
+on:
+  push:
+    branches:
+    - main
 jobs:
   build:
     runs-on: ubuntu-latest 
-    permissions: 
-      contents: read
-      packages: write 
     steps:
     - uses: actions/checkout@v2
     - run: yarn
