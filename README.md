@@ -24,8 +24,8 @@ Notion API supports all read operations on pages and collections. Write operatio
 |------------------------|--------------|------------------------------------------------------------------------|
 | Read page properties   | ✅            |                                                                        |
 | Read page metadata     | ✅            |                                                                        |
-| Read full page content | ✅            | Iterates through entire Notion page until full page content is fetched |
-| Update page            | ❌            |                                                                        |
+| Read full page content | ✅            |                                                                        |
+| Update page            | ❌            | Feature coming soon! 👀 |
 
 ## Notion table/collection
 
