@@ -1,3 +1,9 @@
+/**
+ * @private INTERNAL
+ *
+ * Checks if provided string is a URL.
+ * @param {string} string
+ */
 export const isURL = (string: string) =>
   new RegExp(
     "^(https?:\\/\\/)?" + // protocol

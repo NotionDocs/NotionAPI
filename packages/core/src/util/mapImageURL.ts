@@ -1,9 +1,13 @@
 import { Block } from "notion-types";
 
 /**
- * originally from nextjs-notion-starter-kit
+ * @private INTERNAL
  *
- * https://github.com/transitive-bullshit/nextjs-notion-starter-kit/blob/master/lib/map-image-url.ts#L4
+ * Originally from [nextjs-notion-starter-kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit/blob/master/lib/map-image-url.ts#L4).
+ *
+ * Maps a private Notion image URL to a publicly available URL.
+ * @param {string} url - private Notion image URL
+ * @param {Block} block - the image block
  */
 export const mapImageURL = (url: string, block: Block) => {
   if (!url) {

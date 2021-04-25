@@ -1,7 +1,10 @@
 import { PageMetadata } from "./PageMetadata";
 
-export interface CollectionPage<P extends Record<string, any> = Record<string, any>> {
+/**
+ * Represents a page in a Notion collection.
+ */
+export interface CollectionPage<Props extends Record<string, any> = Record<string, any>> {
   id: string;
-  properties: P;
+  properties: Props;
   metadata: PageMetadata;
 }

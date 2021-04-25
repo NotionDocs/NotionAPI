@@ -4,11 +4,6 @@ import { NotionPageService } from "./page";
 import { dashifyId } from "./util/dashifyId";
 import { NotionClient } from "@notiondocs/api-client";
 
-export interface NotionCollectionPagesReq {
-  cursor?: string;
-  limit?: number;
-}
-
 export class NotionCollectionService {
   constructor(private client: NotionClient, private pageService: NotionPageService) {}
 

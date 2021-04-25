@@ -8,6 +8,12 @@ const isValidId = (id: string) => {
   return parts.length == 5;
 };
 
+/**
+ * @private INTERNAL
+ *
+ * Converts URL-safe page ID to dashify'd Notion-safe page ID.
+ * @param {string} id - URL-safe page ID (without dashes)
+ */
 export const dashifyId = (id: string) => {
   if (isValidId(id)) return id;
 
