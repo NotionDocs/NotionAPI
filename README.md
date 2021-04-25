@@ -37,3 +37,7 @@ Notion API supports all read operations on pages and collections. Write operatio
 | Filter collection based on view  | ✅            | Change the `collectionViewId` based on which view you wish to filter by |
 | Create new page in collection    | ❌            |                                                                         |
 | Delete page in collection        | ❌            |                                                                         |
+
+# Documentation
+
+Documentation is coming soon, once the entire NotionDocs suite is finished. **That being said**, Notion API is written entirely in Typescript and is (WIP) fully documented in code.
