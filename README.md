@@ -7,7 +7,7 @@
 
 [![Build](https://github.com/NotionDocs/NotionAPI/actions/workflows/build.yml/badge.svg)](https://github.com/NotionDocs/NotionAPI/actions/workflows/build.yml)
 [![release](https://badgen.net/github/release/NotionDocs/NotionAPI)](https://github.com/NotionDocs/NotionAPI/releases)
-[![last commit](https://badgen.net/github/last-commit/NotionDocs/NotionAPI)](https://github.com/NotionDocs/NotionAPI/commits/main)
+[![last commit](https://badgen.net/github/last-commit/NotionDocs/NotionAPI/main)](https://github.com/NotionDocs/NotionAPI/commits/main)
 ![contributors welcome](https://badgen.net/badge/contributors/welcome/purple)
 
 </div>
