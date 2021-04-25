@@ -1,6 +1,6 @@
 import { BlockMap, PageBlock, PageChunk } from "notion-types";
 import { RecordMap } from "notion-types/src/maps";
-import { isURL, mapImageURL, PageMetadata } from "./util";
+import { PageMetadata } from "./util";
 import { dashifyId } from "./util/dashifyId";
 import { NotionClient } from "@notiondocs/api-client";
 
@@ -19,12 +19,8 @@ export class NotionPageService {
     const _format = pageBlock.format;
     let format = {
       font: _format?.["page_font"],
-      cover: isURL(_format?.["page_cover"] || "")
-        ? mapImageURL(_format?.["page_cover"], pageBlock)
-        : _format?.["page_cover"],
-      pageIcon: isURL(_format?.["page_icon"] || "")
-        ? mapImageURL(_format?.["page_icon"], pageBlock)
-        : _format?.["page_icon"],
+      cover: _format?.["page_cover"],
+      pageIcon: _format?.["page_icon"],
     };
 
     return {
