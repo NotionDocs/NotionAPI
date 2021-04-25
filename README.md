@@ -10,6 +10,9 @@
 [![last commit](https://badgen.net/github/last-commit/NotionDocs/NotionAPI/main)](https://github.com/NotionDocs/NotionAPI/commits/main)
 ![contributors welcome](https://badgen.net/badge/contributors/welcome/purple)
 
+![Code Quality Score](https://www.code-inspector.com/project/21908/score/svg)
+![Code Grade](https://www.code-inspector.com/project/21908/status/svg)
+
 </div>
 
 ---
