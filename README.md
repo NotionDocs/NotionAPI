@@ -1,7 +1,4 @@
 <div align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <img src="https://avatars2.githubusercontent.com/u/67568167" width="100"/>  
 
@@ -10,8 +7,9 @@
 
 [![Build](https://github.com/NotionDocs/NotionAPI/actions/workflows/build.yml/badge.svg)](https://github.com/NotionDocs/NotionAPI/actions/workflows/build.yml)
 [![release](https://badgen.net/github/release/NotionDocs/NotionAPI)](https://github.com/NotionDocs/NotionAPI/releases)
-[![last commit](https://badgen.net/github/last-commit/NotionDocs/NotionAPI/main)](https://github.com/NotionDocs/NotionAPI/commits/main)
-![contributors welcome](https://badgen.net/badge/contributors/welcome/purple)
+[![last commit](https://badgen.net/github/last-commit/NotionDocs/NotionAPI/main)](https://github.com/NotionDocs/NotionAPI/commits/main) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![Code Quality Score](https://www.code-inspector.com/project/21908/score/svg)
 ![Code Grade](https://www.code-inspector.com/project/21908/status/svg)
@@ -20,7 +18,7 @@
 
 ---
 
-# Overview
+## Overview
 
 NotionAPI comes with 3 packages: [`@notiondocs/api-client`](https://github.com/NotionDocs/NotionAPI/packages/696039), [`@notiondocs/api-core`](https://github.com/NotionDocs/NotionAPI/packages/696041), and [`@notiondocs/api-transform`](https://github.com/NotionDocs/NotionAPI/packages/696040). Each package serves a different purpose:
 
@@ -28,11 +26,11 @@ NotionAPI comes with 3 packages: [`@notiondocs/api-client`](https://github.com/N
 - [`@notiondocs/api-core`](https://github.com/NotionDocs/NotionAPI/packages/696041) provides a layer of abstraction on top of the `client` package that makes manipulating data from the Notion backend a breeze.
 - [`@notiondocs/api-transform`](https://github.com/NotionDocs/NotionAPI/packages/696040) allows you to transform Notion page content by providing specific transformation rules.
 
-# Features
+## Features
 
 Notion API supports all read operations on pages and collections. Write operations are coming soon!
 
-## Notion backend
+### Notion backend
 
 | Feature | Availability | Notes |
 |---------|--------------|-------|
@@ -40,7 +38,7 @@ Notion API supports all read operations on pages and collections. Write operatio
 | Query private pages | ✅ | see [`client` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/client) |
 | Get user information | 😕 | not directly supported, but possible with [`client` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/client) |
 
-## Notion page
+### Notion page
 
 | Feature | Availability | Notes |
 |---------|--------------|-------|
@@ -50,7 +48,7 @@ Notion API supports all read operations on pages and collections. Write operatio
 | Transform content block map | ✅ | see [`transform` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/transform) |
 | Update page | ❌ | Feature coming soon! 👀 |
 
-## Notion table/collection
+### Notion table/collection
 
 | Feature | Availability | Notes |
 |---------|--------------|-------|
@@ -61,7 +59,7 @@ Notion API supports all read operations on pages and collections. Write operatio
 | Create new page in collection    | ❌ |                                                                         |
 | Delete page in collection        | ❌ |                                                                         |
 
-# Documentation
+## Documentation
 
 Documentation is coming soon, once the entire NotionDocs suite is finished. **That being said**, NotionAPI is written entirely in Typescript and is (WIP) fully documented in code.
 
