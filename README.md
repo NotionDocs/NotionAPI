@@ -21,8 +21,8 @@
 
 NotionAPI comes with 3 packages: [`@notiondocs/api-client`](https://github.com/NotionDocs/NotionAPI/packages/696039), [`@notiondocs/api-core`](https://github.com/NotionDocs/NotionAPI/packages/696041), and [`@notiondocs/api-transform`](https://github.com/NotionDocs/NotionAPI/packages/696040). Each package serves a different purpose:
 
-- [`@notiondocs/api-client`](https://github.com/NotionDocs/NotionAPI/packages/696039) is used for making queries to the Notion backend. It is a required dependency for `@notiondocs/api-core`.
-- [`@notiondocs/api-client`](https://github.com/NotionDocs/NotionAPI/packages/696041) provides a layer of abstraction on top of the `client` package that makes manipulating data from the Notion backend a breeze.
+- [`@notiondocs/api-client`](https://github.com/NotionDocs/NotionAPI/packages/696039) is used for making queries to the Notion backend. It is a required dependency for the `core` package.
+- [`@notiondocs/api-core`](https://github.com/NotionDocs/NotionAPI/packages/696041) provides a layer of abstraction on top of the `client` package that makes manipulating data from the Notion backend a breeze.
 - [`@notiondocs/api-transform`](https://github.com/NotionDocs/NotionAPI/packages/696040) allows you to transform Notion page content by providing specific transformation rules.
 
 # Features
