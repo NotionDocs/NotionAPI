@@ -25,28 +25,28 @@ Notion API supports all read operations on pages and collections. Write operatio
 
 | Feature | Availability | Notes |
 |---------|--------------|-------|
-| Query Notion backend | ✅ | see `client` package |
-| Query private pages | ✅ | see `client` package |
-| Get user information | 😕 | not directly supported, but possible with `client` package |
+| Query Notion backend | ✅ | see [`client` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/client) |
+| Query private pages | ✅ | see [`client` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/client) |
+| Get user information | 😕 | not directly supported, but possible with [`client` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/client) |
 
 ## Notion page
 
 | Feature | Availability | Notes |
 |---------|--------------|-------|
-| Read page properties | ✅ | see `core` package |
-| Read page metadata | ✅ | see `core` package |
-| Read full page content | ✅ | see `core` package |
-| Transform content block map | ✅ | see `transform` package |
-| Update page            | ❌            | Feature coming soon! 👀 |
+| Read page properties | ✅ | see [`core` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/core) |
+| Read page metadata | ✅ | see [`core` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/core) |
+| Read full page content | ✅ | see [`core` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/core) |
+| Transform content block map | ✅ | see [`transform` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/transform) |
+| Update page | ❌ | Feature coming soon! 👀 |
 
 ## Notion table/collection
 
 | Feature | Availability | Notes |
 |---------|--------------|-------|
-| Fetch collection schema | ✅ | see `core` package |
-| Fetch collection from collection page | ✅ | see `core` package |
-| Fetch collection from collection ID | ✅ | see `core` package |
-| Filter collection based on view | ✅ | see `core` package |
+| Fetch collection schema | ✅ | see [`core` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/core) |
+| Fetch collection from collection page | ✅ | see [`core` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/core) |
+| Fetch collection from collection ID | ✅ | see [`core` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/core) |
+| Filter collection based on view | ✅ | see [`core` package](https://github.com/NotionDocs/NotionAPI/tree/main/packages/core) |
 | Create new page in collection    | ❌            |                                                                         |
 | Delete page in collection        | ❌            |                                                                         |
 
