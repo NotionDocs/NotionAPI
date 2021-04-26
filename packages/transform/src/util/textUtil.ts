@@ -5,7 +5,7 @@ import { NotionText } from "../schemas";
  * @private INTERNAL
  *
  * Parse an array of Notion text Decoration into NotionText schema.
- * @param {Decoration[]} children - the array of Notion text Decoration
+ * @param children - array of Notion text {@link Decoration}
  */
 export const parseNotionText = (children: Decoration[]) =>
   (children || []).map((it) => {

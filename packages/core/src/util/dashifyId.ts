@@ -1,6 +1,10 @@
 const DASH_ID_LENGTH_VALID = 36;
 const DASH_ID_CLEAN_LENGTH_VALID = 32;
 
+/**
+ * Checks if id is valid Notion-safe page id.
+ * @param id
+ */
 const isValidId = (id: string) => {
   if (id.length != DASH_ID_LENGTH_VALID) return false;
 
@@ -11,8 +15,8 @@ const isValidId = (id: string) => {
 /**
  * @private INTERNAL
  *
- * Converts URL-safe page ID to dashify'd Notion-safe page ID.
- * @param {string} id - URL-safe page ID (without dashes)
+ * Converts URL-safe page ID to dashify'd Notion-safe page id.
+ * @param {string} id - URL-safe page id (without dashes)
  */
 export const dashifyId = (id: string) => {
   if (isValidId(id)) return id;

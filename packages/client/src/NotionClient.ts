@@ -5,7 +5,7 @@ const NOTION_API_URL = "https://www.notion.so/api/v3/";
 /**
  * Used for performing queries on the Notion backend with provided token and httpService.
  * @param {string} token - your private Notion token. Required for accessing private pages
- * @param {HTTPService} httpService - your HTTP service function that will make the HTTP requests
+ * @param httpService - your {@link HTTPService} that will make the HTTP requests
  */
 export class NotionClient {
   constructor(private token: string, private httpService: HTTPService) {}

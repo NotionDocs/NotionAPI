@@ -1,7 +1,7 @@
 /**
- * HTTP Service interface used by NotionAPI client. To be implemented by user.
+ * HTTP Service interface used by {@link NotionClient}. To be implemented by user.
  * @param {string} url - the URL to which the request will be sent
- * @param {HTTPServiceRequest} request - the request
+ * @param request - {@link HTTPServiceRequest}
  * @return Promise of object with responseData
  */
 export declare type HTTPService = (

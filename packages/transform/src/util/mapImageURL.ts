@@ -7,7 +7,7 @@ import { Block } from "notion-types";
  *
  * Maps a private Notion image URL to a publicly available URL.
  * @param {string} url - private Notion image URL
- * @param {Block} block - the image block
+ * @param block - the image {@link Block}
  */
 export const mapImageURL = (url: string, block: Block) => {
   if (!url) {

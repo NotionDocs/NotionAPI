@@ -4,9 +4,9 @@ import { TransformationRules } from "./TransformationRules";
 
 /**
  * Transform a given block map with given transform rules.
- * @param {BlockMap} blockMap - the block map on which the transformation will be performed
+ * @param blockMap - the {@link BlockMap} on which the transformation will be performed
  * @param {string} blockId - the id of the parent block
- * @param {TransformationRules} transformationRules - the rules of the transformation
+ * @param transformationRules - the {@link TransformationRules} of the transformation
  * @param {boolean} isTopLevel - if the parent block is a top-level page block (default true)
  */
 export function transformBlockMap<T>(

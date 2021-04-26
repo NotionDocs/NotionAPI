@@ -11,8 +11,8 @@ export class NotionPageService {
 
   /**
    * Extract metadata of a Notion page.
-   * @param {RecordMap} recordMap - the record map of the page from which the metadata will be extracted
-   * @param pageId - the id of the page from which the metadata will be extracted
+   * @param recordMap - the {@link RecordMap} of the page from which the metadata will be extracted
+   * @param {string} pageId - the id of the page from which the metadata will be extracted
    */
   extractMetadataFrom(recordMap: RecordMap, pageId: string): PageMetadata {
     const schema = Object.values(recordMap.collection)[0].value.schema;
@@ -41,7 +41,7 @@ export class NotionPageService {
 
   /**
    * Extract properties of a Notion page.
-   * @param {RecordMap} recordMap - the record map of the page from which the properties will be extracted
+   * @param recordMap - the {@link RecordMap} of the page from which the properties will be extracted
    * @param pageId - the id of the page from which the properties will be extracted
    */
   extractPropertiesFrom(recordMap: RecordMap, pageId: string) {
@@ -122,7 +122,7 @@ export class NotionPageService {
 
   /**
    * Extract content from a RecordMap.
-   * @param {RecordMap} recordMap - the record map from which the content will be extracted
+   * @param recordMap - the {@link RecordMap}p from which the content will be extracted
    */
   extractContentFrom(recordMap: RecordMap) {
     return recordMap.block;

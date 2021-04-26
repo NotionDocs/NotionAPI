@@ -5,7 +5,7 @@ import { defaultNotionText, parseNotionText } from "./textUtil";
  * @private INTERNAL
  *
  * Helper method to get text content.
- * @param {Decoration[]} text
+ * @param text - array of Notion text {@link Decoration}
  */
 export const getTextContent = (text?: Decoration[]) => {
   if (!text) return undefined;

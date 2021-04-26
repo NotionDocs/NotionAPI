@@ -11,8 +11,8 @@ export class NotionCollectionService {
   constructor(private client: NotionClient, private pageService: NotionPageService) {}
 
   /**
-   * Extract pages from a Notion CollectionInstance.
-   * @param {CollectionInstance} collection - the CollectionInstance from which to extract the pages
+   * Extract pages from a Notion {@link CollectionInstance}.
+   * @param collection - the {@link CollectionInstance} from which to extract the pages
    */
   extractPagesFrom = (collection: CollectionInstance): CollectionPage[] =>
     (collection.result.blockIds || []).map((id) => {
@@ -24,14 +24,14 @@ export class NotionCollectionService {
     });
 
   /**
-   * Extract metadata of a Notion CollectionInstance.
-   * @param {CollectionInstance} collection - the CollectionInstance from which to extract the metadata
+   * Extract metadata of a Notion {@link CollectionInstance}.
+   * @param collection - the {@link CollectionInstance} from which to extract the metadata
    */
   extractMetadataFrom = (collection: CollectionInstance) =>
     this.pageService.extractMetadataFrom(collection.recordMap, Object.keys(collection.recordMap.block)[0]);
 
   /**
-   * Fetch a CollectionInstance from Notion using the pageId of the collection.
+   * Fetch a {@link CollectionInstance} from Notion using the pageId of the collection.
    * @param {string} pageId - the pageId of the collection.
    * @param {string} collectionViewId - the view id of the collection
    * @param {number} limit - the limit of chunks to load (default 50)
@@ -67,7 +67,7 @@ export class NotionCollectionService {
   }
 
   /**
-   * Fetch a CollectionInstance from Notion using the id of the collection.
+   * Fetch a {@link CollectionInstance} from Notion using the id of the collection.
    * @param {string} collectionId - the id of the collection.
    * @param {string} collectionViewId - the view id of the collection
    * @param {number} limit - the limit of chunks to load (default 50)

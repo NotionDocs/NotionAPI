@@ -6,7 +6,7 @@ import { groupBlocks } from "./groupBlocks";
  *
  * Find the index of a list item.
  * @param {string} blockId - the id of the list item block
- * @param {BlockMap} blockMap - the block map that contains the list
+ * @param blockMap - the {@link BlockMap} that contains the list
  */
 export const findListIndex = (blockId: string, blockMap: BlockMap) => {
   const groups = groupBlocks(blockMap);
