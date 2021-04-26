@@ -1,4 +1,7 @@
 <div align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <img src="https://avatars2.githubusercontent.com/u/67568167" width="100"/>  
 
@@ -61,3 +64,22 @@ Notion API supports all read operations on pages and collections. Write operatio
 # Documentation
 
 Documentation is coming soon, once the entire NotionDocs suite is finished. **That being said**, NotionAPI is written entirely in Typescript and is (WIP) fully documented in code.
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://colegaw.in"><img src="https://avatars.githubusercontent.com/u/8595795?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cole Gawin</b></sub></a><br /><a href="https://github.com/NotionDocs/NotionAPI/commits?author=chroline" title="Code">💻</a> <a href="#content-chroline" title="Content">🖋</a> <a href="#design-chroline" title="Design">🎨</a> <a href="#ideas-chroline" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-chroline" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-chroline" title="Maintenance">🚧</a> <a href="#projectManagement-chroline" title="Project Management">📆</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
