@@ -1,6 +1,5 @@
 <br />
-<br />
-<br />
+
 <div align="center">
 
 <img src="https://avatars2.githubusercontent.com/u/67568167" width="100"/>  
