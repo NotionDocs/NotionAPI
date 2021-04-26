@@ -21,23 +21,32 @@
 
 Notion API supports all read operations on pages and collections. Write operations are coming soon!
 
+## Notion backend
+
+| Feature | Availability | Notes |
+|---------|--------------|-------|
+| Query Notion backend | ✅ | see `client` package |
+| Query private pages | ✅ | see `client` package |
+| Get user information | 😕 | not directly supported, but possible with `client` package |
+
 ## Notion page
 
-| Feature                | Availability | Notes                                                                  |
-|------------------------|--------------|------------------------------------------------------------------------|
-| Read page properties   | ✅            |                                                                        |
-| Read page metadata     | ✅            |                                                                        |
-| Read full page content | ✅            |                                                                        |
+| Feature | Availability | Notes |
+|---------|--------------|-------|
+| Read page properties | ✅ | see `core` package |
+| Read page metadata | ✅ | see `core` package |
+| Read full page content | ✅ | see `core` package |
+| Transform content block map | ✅ | see `transform` package |
 | Update page            | ❌            | Feature coming soon! 👀 |
 
 ## Notion table/collection
 
-| Feature                          | Availability | Notes                                                                   |
-|----------------------------------|--------------|-------------------------------------------------------------------------|
-| Fetch collection schema          | ✅            |                                                                         |
-| Fetch collection from table page | ✅            |                                                                         |
-| Fetch collection from table ID   | ✅            |                                                                         |
-| Filter collection based on view  | ✅            | Change the `collectionViewId` based on which view you wish to filter by |
+| Feature | Availability | Notes |
+|---------|--------------|-------|
+| Fetch collection schema | ✅ | see `core` package |
+| Fetch collection from collection page | ✅ | see `core` package |
+| Fetch collection from collection ID | ✅ | see `core` package |
+| Filter collection based on view | ✅ | see `core` package |
 | Create new page in collection    | ❌            |                                                                         |
 | Delete page in collection        | ❌            |                                                                         |
 
