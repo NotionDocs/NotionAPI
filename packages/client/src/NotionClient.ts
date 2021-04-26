@@ -11,10 +11,9 @@ export class NotionClient {
   constructor(private token: string, private httpService: HTTPService) {}
 
   /**
-   * @private INTERNAL
-   *
-   * @param {string} page
-   * @param {any} data
+   * Query the Notion backend.
+   * @param {string} page - the Notion backend page to query
+   * @param {any} data - the data to send
    */
   public async query(page: string, data: any) {
     return (
