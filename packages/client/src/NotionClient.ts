@@ -10,6 +10,12 @@ const NOTION_API_URL = "https://www.notion.so/api/v3/";
 export class NotionClient {
   constructor(private token: string, private httpService: HTTPService) {}
 
+  /**
+   * @private INTERNAL
+   *
+   * @param {string} page
+   * @param {any} data
+   */
   public async query(page: string, data: any) {
     return (
       await this.httpService(NOTION_API_URL + page, {

@@ -1,12 +1,19 @@
 import { BlockMap, PageBlock, PageChunk } from "notion-types";
 import { RecordMap } from "notion-types/src/maps";
 import { PageMetadata } from "./util";
-import { dashifyId } from "./util/dashifyId";
 import { NotionClient } from "@notiondocs/api-client";
 
+/**
+ * Service for working with Notion pages.
+ */
 export class NotionPageService {
   constructor(private client: NotionClient) {}
 
+  /**
+   * Extract metadata of a Notion page.
+   * @param {RecordMap} recordMap - the record map of the page from which the metadata will be extracted
+   * @param pageId - the id of the page from which the metadata will be extracted
+   */
   extractMetadataFrom(recordMap: RecordMap, pageId: string): PageMetadata {
     const schema = Object.values(recordMap.collection)[0].value.schema;
 
@@ -32,6 +39,11 @@ export class NotionPageService {
     };
   }
 
+  /**
+   * Extract properties of a Notion page.
+   * @param {RecordMap} recordMap - the record map of the page from which the properties will be extracted
+   * @param pageId - the id of the page from which the properties will be extracted
+   */
   extractPropertiesFrom(recordMap: RecordMap, pageId: string) {
     const { schema } = this.extractMetadataFrom(recordMap, pageId);
 
@@ -108,11 +120,20 @@ export class NotionPageService {
     }, {} as Record<string, any>);
   }
 
+  /**
+   * Extract content from a RecordMap.
+   * @param {RecordMap} recordMap - the record map from which the content will be extracted
+   */
   extractContentFrom(recordMap: RecordMap) {
     return recordMap.block;
   }
 
-  async getContentOf(pageId: string, loaderLimit: number = 30) {
+  /**
+   * Get the entire BlockMap content of a page.
+   * @param {string} pageId - the id of the page of which to get the content
+   * @param {number} limit - the limit of chunks to load (default 30)
+   */
+  async getContentOf(pageId: string, limit: number = 30) {
     let index = 0;
 
     let content = {};
@@ -121,7 +142,7 @@ export class NotionPageService {
       const newContent = this.extractContentFrom(
         ((await this.client.query("loadPageChunk", {
           pageId,
-          limit: loaderLimit,
+          limit,
           cursor: { stack: [[{ table: "block", id: pageId, index }]] },
           chunkNumber: 0,
           verticalColumns: false,
@@ -132,18 +153,9 @@ export class NotionPageService {
       if (Object.keys(content).includes(Object.keys(newContent).pop())) break;
 
       content = { ...content, ...newContent };
-      index += loaderLimit;
+      index += limit;
     }
 
     return content as BlockMap;
   }
-
-  fetch = async (pageId: string) =>
-    (await this.client.query("loadPageChunk", {
-      pageId: dashifyId(pageId),
-      limit: 30,
-      cursor: { stack: [] },
-      chunkNumber: 0,
-      verticalColumns: false,
-    })) as PageChunk;
 }

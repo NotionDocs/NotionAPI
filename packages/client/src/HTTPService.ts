@@ -1,12 +1,17 @@
 /**
- * HTTP Service interface used by NotionAPI client. To be implemented by user. Accepts url to send request to and request information. Returns a Promise with ret
+ * HTTP Service interface used by NotionAPI client. To be implemented by user.
+ * @param {string} url - the URL to which the request will be sent
+ * @param {HTTPServiceRequest} request - the request
+ * @return Promise of object with responseData
  */
-export type HTTPService = (
+export declare type HTTPService = (
   url: string,
-  request: {
-    data: any;
-    headers: Record<string, any>;
-  }
+  request: HTTPServiceRequest
 ) => Promise<{
   responseData: Record<string, any>;
 }>;
+
+export type HTTPServiceRequest = {
+  data: any;
+  headers: Record<string, any>;
+};

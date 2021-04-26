@@ -1,4 +1,4 @@
-export * from "./findListStart";
+export * from "./findListIndex";
 export * from "./getTextContent";
 export * from "./getTopLevelPageBlock";
 export * from "./groupBlocks";

@@ -1,18 +1,25 @@
 import { BlockMap } from "notion-types";
-import { findListStart, getTextContent, getTopLevelPageBlock, mapImageURL } from "./util";
-import { TransformRules } from "./TransformRules";
+import { findListIndex, getTextContent, getTopLevelPageBlock, mapImageURL } from "./util";
+import { TransformationRules } from "./TransformationRules";
 
+/**
+ * Transform a given block map with given transform rules.
+ * @param {BlockMap} blockMap - the block map on which the transformation will be performed
+ * @param {string} blockId - the id of the parent block
+ * @param {TransformationRules} transformationRules - the rules of the transformation
+ * @param {boolean} isTopLevel - if the parent block is a top-level page block (default true)
+ */
 export function transformBlockMap<T>(
   blockMap: BlockMap,
   blockId: string,
-  transformRules: TransformRules<T>,
+  transformationRules: TransformationRules<T>,
   isTopLevel: boolean = true
 ): T {
   const block = blockMap[blockId];
 
   if (!block) return;
 
-  let type: keyof TransformRules<T> = block.value.type as any;
+  let type: keyof TransformationRules<T> = block.value.type as any;
   let content: any;
   let children: T[];
 
@@ -22,11 +29,11 @@ export function transformBlockMap<T>(
       break;
     case "toggle":
       content = getTextContent(block.value.properties?.title);
-      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformRules, false));
+      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformationRules, false));
       break;
     case "page":
       if (isTopLevel) {
-        children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformRules, false));
+        children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformationRules, false));
         break;
       }
       type = "pageLink";
@@ -37,10 +44,10 @@ export function transformBlockMap<T>(
     case "bulleted_list":
     case "numbered_list":
       const listText = getTextContent(block.value.properties?.title);
-      const listStart = findListStart(blockId, blockMap);
+      const listStart = findListIndex(blockId, blockMap);
       const listColor = block.value.format?.block_color;
       content = { text: listText, start: listStart, color: listColor };
-      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformRules, false));
+      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformationRules, false));
       break;
     case "header":
     case "sub_header":
@@ -54,7 +61,7 @@ export function transformBlockMap<T>(
       const todoText = getTextContent(block.value.properties?.title);
       const checked = block.value.properties.checked?.[0]?.[0] === "Yes";
       content = { text: todoText, checked };
-      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformRules, false));
+      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformationRules, false));
       break;
     case "table_of_contents":
       const page = getTopLevelPageBlock(block.value, blockMap);
@@ -79,13 +86,13 @@ export function transformBlockMap<T>(
       // no content or children
       break;
     case "column_list":
-      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformRules, false));
+      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformationRules, false));
       break;
     case "column":
       content = {
         ratio: block.value.format?.column_ratio || 0.5,
       };
-      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformRules, false));
+      children = block.value.content?.map((id) => transformBlockMap(blockMap, id, transformationRules, false));
       break;
     case "quote":
       const quoteText = getTextContent(block.value.properties?.title);
@@ -142,5 +149,5 @@ export function transformBlockMap<T>(
       break;
   }
 
-  return transformRules[type]?.(blockId, content, children?.filter(Boolean));
+  return transformationRules[type]?.(blockId, content, children?.filter(Boolean));
 }

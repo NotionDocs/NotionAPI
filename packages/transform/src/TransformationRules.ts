@@ -15,7 +15,7 @@ import {
   TodoBlockContent,
 } from "./schemas";
 
-export type TransformRules<T> = Partial<{
+export type TransformationRules<T> = Partial<{
   text: (id: string, content: TextBlockContent) => T;
   page: (id: string, content: undefined, children: T[]) => T;
   pageLink: (id: string, content: PageLinkBlockContent) => T;
