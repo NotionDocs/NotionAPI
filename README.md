@@ -64,6 +64,7 @@ Notion API supports all read operations on pages and collections. Write operatio
 # Documentation
 
 Documentation is coming soon, once the entire NotionDocs suite is finished. **That being said**, NotionAPI is written entirely in Typescript and is (WIP) fully documented in code.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
