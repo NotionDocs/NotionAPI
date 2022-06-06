@@ -1,6 +1,6 @@
 {
   "name": "@notiondocs/api-core",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "repository": "https://github.com/NotionDocs/NotionAPI",
   "sideEffects": false,
   "description": "The unofficial Javascript API for Notion. Written in Typescript, GraphQL friendly.",
@@ -34,7 +34,7 @@
   "author": "Cole Gawin",
   "license": "MPL-2.0",
   "dependencies": {
-    "@notiondocs/api-client": "^0.0.15",
+    "@notiondocs/api-client": "^0.0.16",
     "notion-types": "^4.0.0"
   },
   "devDependencies": {
