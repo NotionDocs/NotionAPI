@@ -53,8 +53,8 @@ export class NotionCollectionService {
     const query = page.recordMap.collection_view[collectionViewId].value.query2;
 
     return (await this.client.query("queryCollection", {
-      collectionId,
-      collectionViewId,
+      collection: { id: collectionId },
+      collectionView: { id: collectionViewId },
       loader: {
         limit,
         loadContentCover: true,
@@ -75,8 +75,8 @@ export class NotionCollectionService {
    */
   async fetch(collectionId: string, collectionViewId: string, limit: number = 50) {
     return (await this.client.query("queryCollection", {
-      collectionId,
-      collectionViewId,
+      collection: { id: collectionId },
+      collectionView: { id: collectionViewId },
       loader: {
         limit,
         loadContentCover: true,

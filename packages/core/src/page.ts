@@ -121,14 +121,6 @@ export class NotionPageService {
   }
 
   /**
-   * Extract content from a RecordMap.
-   * @param recordMap - the {@link RecordMap}p from which the content will be extracted
-   */
-  extractContentFrom(recordMap: RecordMap) {
-    return recordMap.block;
-  }
-
-  /**
    * Get the entire BlockMap content of a page.
    * @param {string} pageId - the id of the page of which to get the content
    * @param {number} limit - the limit of chunks to load (default 30)
@@ -139,15 +131,13 @@ export class NotionPageService {
     let content = {};
 
     while (true) {
-      const newContent = this.extractContentFrom(
-        ((await this.client.query("loadPageChunk", {
-          pageId,
-          limit,
-          cursor: { stack: [[{ table: "block", id: pageId, index }]] },
-          chunkNumber: 0,
-          verticalColumns: false,
-        })) as PageChunk).recordMap
-      );
+      const newContent = ((await this.client.query("loadPageChunk", {
+        pageId,
+        limit,
+        cursor: { stack: [[{ table: "block", id: pageId, index }]] },
+        chunkNumber: 0,
+        verticalColumns: false,
+      })) as PageChunk).recordMap.block;
 
       // if last key in new content is in content, then the search is over
       if (Object.keys(content).includes(Object.keys(newContent).pop())) break;
