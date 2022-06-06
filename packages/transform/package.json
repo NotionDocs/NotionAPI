@@ -1,6 +1,6 @@
 {
   "name": "@notiondocs/api-transform",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "repository": "https://github.com/NotionDocs/NotionAPI",
   "sideEffects": false,
   "description": "Transformation package for NotionAPI",
