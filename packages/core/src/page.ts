@@ -1,5 +1,4 @@
-import { BlockMap, PageBlock, PageChunk } from "notion-types";
-import { RecordMap } from "notion-types/src/maps";
+import { BlockMap, PageBlock, PageChunk, RecordMap } from "notion-types";
 import { PageMetadata } from "./util";
 import { NotionClient } from "@notiondocs/api-client";
 
