@@ -33,11 +33,15 @@ export class NotionCollectionService {
   /**
    * Fetch a {@link CollectionInstance} from Notion using the pageId of the collection.
    * @param {string} pageId - the pageId of the collection.
-   * @param {string} collectionViewId - the view id of the collection
-   * @param {number} limit - the limit of chunks to load (default 50)
+   * @param {string} collectionViewId - the view id of the collection.
+   * @param {object} options - the options for fetching the collection.
    * @see fetch
    */
-  async fetchFrom(pageId: string, collectionViewId: string, limit: number = 50) {
+  async fetchFrom(
+    pageId: string,
+    collectionViewId: string,
+    options: { limit?: number; searchQuery?: string; userTimeZone?: string } = {}
+  ) {
     const page = (await this.client.query("loadPageChunk", {
       pageId: dashifyId(pageId),
       cursor: { stack: [] },
@@ -50,19 +54,28 @@ export class NotionCollectionService {
 
     collectionViewId = dashifyId(collectionViewId);
 
-    const query = page.recordMap.collection_view[collectionViewId].value.query2;
-
     return (await this.client.query("queryCollection", {
       collection: { id: collectionId },
       collectionView: { id: collectionViewId },
       loader: {
-        limit,
-        loadContentCover: true,
-        searchQuery: "",
-        type: "table",
-        userTimeZone: "America/Chicago",
+        type: "reducer",
+        reducers: {
+          collection_group_results: {
+            type: "results",
+            limit: options.limit || 999,
+            loadContentCover: true,
+          },
+          "table:uncategorized:title:count": {
+            type: "aggregation",
+            aggregation: {
+              property: "title",
+              aggregator: "count",
+            },
+          },
+        },
+        searchQuery: options.searchQuery || "",
+        userTimeZone: options.searchQuery || "America/Chicago",
       },
-      query,
     })) as CollectionInstance;
   }
 
