@@ -1,4 +1,4 @@
-import { CollectionInstance, PageChunk } from "notion-types";
+import { CollectionInstance, CollectionQueryResult, PageChunk } from "notion-types";
 import { CollectionPage } from "./util";
 import { NotionPageService } from "./page";
 import { dashifyId } from "./util/dashifyId";
@@ -15,7 +15,10 @@ export class NotionCollectionService {
    * @param collection - the {@link CollectionInstance} from which to extract the pages
    */
   extractPagesFrom = (collection: CollectionInstance): CollectionPage[] =>
-    (collection.result.blockIds || []).map((id) => {
+    (
+      ((collection.result as unknown) as { reducerResults: CollectionQueryResult }).reducerResults
+        .collection_group_results.blockIds || []
+    ).map((id) => {
       return {
         id,
         properties: this.pageService.extractPropertiesFrom(collection.recordMap, id),
